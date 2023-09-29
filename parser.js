@@ -5,6 +5,7 @@ javascript:(function(){
     
     function getData() {
         const datas = [];
+        let children = document.getElementById('UnmatchedHousingRequestView').children;
         if (children.length % 2 !== 0) { console.log('Odd length of results?'); }
         else { 
             for (let i=0;i<children.length-1;) {
