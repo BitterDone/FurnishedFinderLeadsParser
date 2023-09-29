@@ -28,7 +28,7 @@ javascript:(function(){
                 let budget = getChildText(innerRowTable.children[11]).replaceAll(',',';');
                 let propType = getChildText(innerRowTable.children[12]).replaceAll(',',';');
                 let reqs = getChildText(innerRowTable.children[14]).replaceAll(',',';');
-                let notes = getChildText(innerRowTable.children[15]).replaceAll(',',';');
+                let notes = getChildText(innerRowTable.children[15]).replaceAll(',',';').replaceAll('\n',';');
                 let notesForSelf = getChildText(innerRowTable.children[16]).replaceAll(',',';');
                 let submitted = getChildText(innerRowTable.children[17]).replaceAll(',',';');
     
@@ -37,10 +37,10 @@ javascript:(function(){
     
                 i += 2;
             }
-
+            
             var csvCollection = '';
     
-            for (let j=0;j<datas.length-1;j++) {
+            for (let j=0;j<datas.length;j++) {
                 const d = datas[j];
                 let csvLine = '' + j + ',' ;
                 for (var key in d) {
