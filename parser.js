@@ -15,7 +15,9 @@ javascript:(function(){
                 let name = outerRow.children[1].children[0].children[0].innerText.replaceAll(',',';');
                 let unitId = getChildText(innerRowTable.children[2]).replaceAll(',',';');
                 let location = getChildText(innerRowTable.children[3]).replaceAll(',',';');
-                let dates = getChildText(innerRowTable.children[4]).replaceAll(',',';');
+                let dateStart = getChildText(innerRowTable.children[4]).replaceAll(',',';').split('-')[0];
+                let dateEnd = getChildText(innerRowTable.children[4]).replaceAll(',',';').split('-')[1];
+                let duration = ((Date.parse('12/9/23') - Date.parse('11/4/23')) / (24*60*60*1000)).toFixed(1);
                 let travelers = getChildText(innerRowTable.children[5]).replaceAll(',',';');
                 let beds = getChildText(innerRowTable.children[6]).replaceAll(',',';');
                 let job = getChildText(innerRowTable.children[7]).replaceAll(',',';');
@@ -29,7 +31,7 @@ javascript:(function(){
                 let notesForSelf = getChildText(innerRowTable.children[16]).replaceAll(',',';');
                 let submitted = getChildText(innerRowTable.children[17]).replaceAll(',',';');
     
-                const data = {  name, unitId, location, dates, travelers, beds, job, pets, facility, staffCo, budget, propType, reqs, notes, notesForSelf, submitted };
+                const data = {  unitId, name, dateStart, dateEnd, duration, budget, pets, submitted, travelers, beds, job, facility, location, staffCo, propType, reqs, notesForSelf, notes };
                 datas.push(data);
     
                 i += 2;
@@ -53,3 +55,5 @@ javascript:(function(){
     }
     getData();
 })();
+
+// name, unitId, location, dateStart, dateEnd, travelers, beds, job, pets, facility, staffCo, budget, propType, reqs, notes, notesForSelf, submitted
