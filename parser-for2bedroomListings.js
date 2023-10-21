@@ -15,9 +15,9 @@ javascript:(function(){
             const amens = {
                 'Fully_Furnished': false,
                 'Utilities_Included': false,
-                '2_bedroom': false,
-                '3_bedroom': false,
                 'Pets_Welcome': false,
+                '3_bedroom': false,
+                '2_bedroom': false,
             };
             for (let j=0;j<detailList.length;) {
                 const item = detailList[j].innerText.replaceAll(' ','_');
